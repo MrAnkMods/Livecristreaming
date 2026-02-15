@@ -1,76 +1,146 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Live Channel Player</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            background: black;
-            font-family: Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<title>ICC Men T20 World Cup 2026 - IND vs PAK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .telegram-bar {
-            width: 100%;
-            text-align: center;
-            padding: 15px 0;
-            background: black;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
 
-        .telegram-btn {
-            display: inline-block;
-            padding: 12px 25px;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            background: linear-gradient(45deg, #0088cc, #00c6ff);
-            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.5);
-            transition: 0.3s ease;
-        }
+/* Premium Header */
+.header {
+    width: 100%;
+    padding: 25px 10px 10px 10px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #ffcc00, #ff512f, #dd2476);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .telegram-btn:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 20px rgba(0, 198, 255, 0.8);
-        }
+/* Match Subtitle */
+.subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
 
-        .player-container {
-            width: 100%;
-            height: calc(100vh - 80px);
-        }
+/* Live Badge */
+.live-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 20px;
+    background: red;
+    margin-bottom: 20px;
+    animation: blink 1s infinite;
+}
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+@keyframes blink {
+    50% { opacity: 0.4; }
+}
+
+/* Telegram Button */
+.telegram-btn {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 12px 30px;
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #0088cc, #00c6ff);
+    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6);
+    transition: 0.3s ease;
+}
+
+.telegram-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 198, 255, 0.9);
+}
+
+/* Player Card Premium */
+.player-card {
+    width: 95%;
+    max-width: 950px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(18px);
+    border-radius: 25px;
+    padding: 18px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+/* Responsive Player */
+.player-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Footer */
+.footer {
+    margin: 30px 0;
+    font-size: 14px;
+    opacity: 0.6;
+}
+</style>
 </head>
+
 <body>
 
-<div class="telegram-bar">
-    <a href="https://t.me/Ankmods0" target="_blank" class="telegram-btn">
-        🚀 Join Our Telegram Channel
-    </a>
+<div class="header">
+🏏 ICC MEN'S T20 WORLD CUP 2026
 </div>
 
-<div class="player-container">
-    <iframe 
-        src="https://all-in-one-channel.vercel.app/STAR?id=148"
-        allowfullscreen
-        allow="autoplay; encrypted-media">
-    </iframe>
+<div class="subtitle">
+INDIA 🇮🇳 vs PAKISTAN 🇵🇰 — Clash of Rivals
 </div>
 
-</body>
-</html>
-<script>
-function goToChannel(){
-  window.location.href = "https://all-in-one-channel.vercel.app/STAR?id=148.";
-}
-</script>
+<div class="live-badge">
+🔴 LIVE STREAMING
+</div>
+
+<a href="https://t.me/Ankmods0" target="_blank" class="telegram-btn">
+🚀 Join Telegram for Match Updates
+</a>
+
+<div class="player-card">
+    <div class="player-wrapper">
+        <iframe 
+            src="https://all-in-one-channel.vercel.app/STAR?id=148"
+            allowfullscreen
+            allow="autoplay; encrypted-media">
+        </iframe>
+    </div>
+</div>
+
+<div class="footer">
+ICC Men's T20 World Cup 2026 | Official Match Coverage
+</div>
 
 </body>
 </html>
