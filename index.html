@@ -151,66 +151,7 @@ body::before {
 
 <div class="live-badge">🔴 LIVE STREAMING</div>
 
-<a href="https://t.me/Ankmods0" target="_blank" class="telegram-btn">
-🚀 Join Telegram for Match Updates
-</a>
-
-<div class="player-card">
-    <div class="player-inner">
-        <div class="player-wrapper">
-            <iframe 
-                src="https://allrounder-king.pages.dev/channel/star-sports-2-hindi"
-                allowfullscreen
-                allow="autoplay; encrypted-media">
-            </iframe>
-        </div>
-    </div>
-</div>
-
-<div class="footer">
-Official Streaming • T20 World Cup 2026
-</div>
-
-<!-- Basic Protection Script -->
-<script>
-document.addEventListener("contextmenu", function(e) {
-    e.preventDefault();
-});
-
-document.onkeydown = function(e) {
-    if (e.keyCode == 123) return false;
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
-    if (e.ctrlKey && e.keyCode == 85) return false;
-};
-
-setInterval(function() {
-    if (window.outerWidth - window.innerWidth > 160 || 
-        window.outerHeight - window.innerHeight > 160) {
-        document.body.innerHTML = "<h1 style='color:red;text-align:center;margin-top:20%;'>Access Denied</h1>";
-    }
-}, 1000);
-</script>
-
-</body>
-</html>
-    margin: 40px 0;
-    font-size: 12px;
-    opacity: 0.5;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header-box">
-    <div class="header">🏏 ICC MEN'S T20 WORLD CUP 2026</div>
-    <div class="subtitle">Premium Live Match Experience</div>
-</div>
-
-<div class="live-badge">🔴 LIVE STREAMING</div>
-
-<a href="#" class="telegram-btn">
+<a href="https://t.me/Ankmods0" class="telegram-btn">
 🚀 Join Telegram for Match Updates
 </a>
 
@@ -230,103 +171,28 @@ setInterval(function() {
 Official Streaming • T20 World Cup 2026
 </div>
 
-<!-- 🔒 MAXIMUM CLIENT SIDE LOCK -->
+<!-- Safe Redirect Guard -->
 <script>
 
-const LOCK_URL = "https://mrankmods.github.io/Livecristreaming/";
-
-/* Force correct URL */
-if (window.location.href !== LOCK_URL) {
-    window.location.replace(LOCK_URL);
-}
-
-/* Prevent iframe hijack */
+/* Prevent Clickjacking (if page opened inside iframe) */
 if (window.top !== window.self) {
-    window.top.location.replace(LOCK_URL);
+    window.top.location = window.location.href;
 }
 
-/* Disable history manipulation */
-history.pushState = function(){};
-history.replaceState = function(){};
-
-/* Monitor URL change */
-setInterval(function(){
-    if (window.location.href !== LOCK_URL) {
-        window.location.replace(LOCK_URL);
-    }
-}, 500);
-
-/* Block external links */
-document.querySelectorAll("a").forEach(link=>{
-    link.addEventListener("click", e=>{
-        e.preventDefault();
-    });
-});
-
-/* Disable right click */
-document.addEventListener("contextmenu", e=>e.preventDefault());
-
-/* Disable inspect shortcuts */
-document.addEventListener("keydown", function(e){
-    if (
-        e.key === "F12" ||
-        (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key)) ||
-        (e.ctrlKey && e.key === "U")
-    ){
-        e.preventDefault();
-    }
-});
-
-</script>
-
-</body>
-</html>
-<div class="header-box">
-    <div class="header">🏏 ICC MEN'S T20 WORLD CUP 2026</div>
-    <div class="subtitle">Premium Live Match Experience</div>
-</div>
-
-<div class="live-badge">🔴 LIVE STREAMING</div>
-
-<a href="https://t.me/Ankmods0" target="_blank" class="telegram-btn">
-🚀 Join Telegram for Match Updates
-</a>
-
-<div class="player-card">
-    <div class="player-inner">
-        <div class="player-wrapper">
-            <iframe 
-                src="http://insiderhd.pages.dev/HINDI2"
-                allowfullscreen
-                allow="autoplay; encrypted-media">
-            </iframe>
-        </div>
-    </div>
-</div>
-
-<div class="footer">
-Official Streaming • T20 World Cup 2026
-</div>
-
-<!-- Basic Protection Script -->
-<script>
-document.addEventListener("contextmenu", function(e) {
-    e.preventDefault();
-});
-
-document.onkeydown = function(e) {
-    if (e.keyCode == 123) return false;
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
-    if (e.ctrlKey && e.keyCode == 85) return false;
-};
+/* Monitor unexpected URL changes */
+let originalURL = window.location.href;
 
 setInterval(function() {
-    if (window.outerWidth - window.innerWidth > 160 || 
-        window.outerHeight - window.innerHeight > 160) {
-        document.body.innerHTML = "<h1 style='color:red;text-align:center;margin-top:20%;'>Access Denied</h1>";
+    if (window.location.href !== originalURL) {
+        window.location.replace(originalURL);
     }
-}, 1000);
+}, 800);
+
+/* Force all anchor links to open safely */
+document.querySelectorAll("a").forEach(function(link) {
+    link.setAttribute("rel", "noopener noreferrer");
+});
+
 </script>
 
 </body>
