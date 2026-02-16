@@ -2,86 +2,124 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ICC Men T20 World Cup 2026 - IND vs PAK</title>
+<title>ICC Men T20 World Cup 2026</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+    background: radial-gradient(circle at center, #0a0a0f 0%, #000000 70%);
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    overflow-x: hidden;
 }
 
-/* Premium Header */
-.header {
+/* Cinematic Top Spotlight */
+body::before {
+    content: "";
+    position: fixed;
+    top: -200px;
     width: 100%;
-    padding: 25px 10px 10px 10px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,0,0,0.15), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Glass Header */
+.header-box {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border-radius: 40px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(255,0,0,0.2);
     text-align: center;
+    z-index: 1;
+}
+
+.header {
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1px;
-    background: linear-gradient(90deg, #ffcc00, #ff512f, #dd2476);
+    background: linear-gradient(90deg,#ffcc00,#ff3c3c,#ff00cc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Match Subtitle */
+/* Subtitle */
 .subtitle {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    opacity: 0.9;
+    font-size: 14px;
+    opacity: 0.7;
+    margin-top: 5px;
 }
 
 /* Live Badge */
 .live-badge {
-    display: inline-block;
-    padding: 6px 14px;
+    margin-top: 20px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    background: linear-gradient(45deg,#8b0000,red);
+    box-shadow: 0 0 25px rgba(255,0,0,0.6);
     font-size: 13px;
     font-weight: bold;
-    border-radius: 20px;
-    background: red;
-    margin-bottom: 20px;
-    animation: blink 1s infinite;
+    animation: pulse 1.5s infinite;
 }
 
-@keyframes blink {
-    50% { opacity: 0.4; }
+@keyframes pulse {
+    50% { transform: scale(1.1); opacity: 0.7; }
 }
 
 /* Telegram Button */
 .telegram-btn {
-    display: inline-block;
-    margin-bottom: 25px;
-    padding: 12px 30px;
-    font-size: 17px;
-    font-weight: 600;
-    color: white;
-    text-decoration: none;
+    margin-top: 25px;
+    padding: 13px 35px;
     border-radius: 50px;
-    background: linear-gradient(45deg, #0088cc, #00c6ff);
-    box-shadow: 0 8px 25px rgba(0, 136, 204, 0.6);
+    background: linear-gradient(45deg,#0055ff,#00ccff);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 0 25px rgba(0,150,255,0.5);
     transition: 0.3s ease;
 }
 
 .telegram-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 198, 255, 0.9);
+    transform: translateY(-4px) scale(1.05);
 }
 
-/* Player Card Premium */
+/* Player Card - Premium Dark */
 .player-card {
     width: 95%;
-    max-width: 950px;
-    background: rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(18px);
+    max-width: 1000px;
+    margin-top: 40px;
+    padding: 8px;
+    border-radius: 30px;
+    background: linear-gradient(145deg,#111,#000);
+    box-shadow: 
+        0 0 80px rgba(255,0,0,0.25),
+        0 0 120px rgba(0,0,0,0.95);
+    position: relative;
+}
+
+/* Soft Red Ambient Ring */
+.player-card::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 30px;
+    background: radial-gradient(circle, rgba(255,0,0,0.25), transparent 70%);
+    z-index: 0;
+}
+
+.player-inner {
+    position: relative;
+    background: rgba(15,15,15,0.95);
     border-radius: 25px;
-    padding: 18px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    padding: 15px;
+    z-index: 1;
 }
 
 /* Responsive Player */
@@ -103,43 +141,41 @@ body {
 
 /* Footer */
 .footer {
-    margin: 30px 0;
-    font-size: 14px;
-    opacity: 0.6;
+    margin: 40px 0;
+    font-size: 12px;
+    opacity: 0.5;
+    letter-spacing: 1px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-🏏 ICC MEN'S T20 WORLD CUP 2026
+<div class="header-box">
+    <div class="header">🏏 ICC MEN'S T20 WORLD CUP 2026</div>
+    <div class="subtitle">Premium Live Match Experience</div>
 </div>
 
-<div class="subtitle">
-INDIA 🇮🇳 vs PAKISTAN 🇵🇰 — Clash of Rivals
-</div>
-
-<div class="live-badge">
-🔴 LIVE STREAMING
-</div>
+<div class="live-badge">🔴 LIVE STREAMING</div>
 
 <a href="https://t.me/Ankmods0" target="_blank" class="telegram-btn">
 🚀 Join Telegram for Match Updates
 </a>
 
 <div class="player-card">
-    <div class="player-wrapper">
-        <iframe 
-            src="https://all-in-one-channel.vercel.app/STAR?id=148"
-            allowfullscreen
-            allow="autoplay; encrypted-media">
-        </iframe>
+    <div class="player-inner">
+        <div class="player-wrapper">
+            <iframe 
+                src="https://all-in-one-channel.vercel.app/STAR?id=148"
+                allowfullscreen
+                allow="autoplay; encrypted-media">
+            </iframe>
+        </div>
     </div>
 </div>
 
 <div class="footer">
-ICC Men's T20 World Cup 2026 | Official Match Coverage
+Official Streaming• T20 World Cup 2026
 </div>
 
 </body>
