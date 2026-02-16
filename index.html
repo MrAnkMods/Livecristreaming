@@ -17,6 +17,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Cinematic Top Spotlight */
 body::before {
     content: "";
     position: fixed;
@@ -25,8 +26,10 @@ body::before {
     height: 500px;
     background: radial-gradient(circle, rgba(255,0,0,0.15), transparent 70%);
     pointer-events: none;
+    z-index: 0;
 }
 
+/* Glass Header */
 .header-box {
     margin-top: 30px;
     padding: 15px 30px;
@@ -35,6 +38,7 @@ body::before {
     backdrop-filter: blur(15px);
     box-shadow: 0 0 30px rgba(255,0,0,0.2);
     text-align: center;
+    z-index: 1;
 }
 
 .header {
@@ -75,6 +79,12 @@ body::before {
     color: white;
     font-weight: 600;
     text-decoration: none;
+    box-shadow: 0 0 25px rgba(0,150,255,0.5);
+    transition: 0.3s ease;
+}
+
+.telegram-btn:hover {
+    transform: translateY(-4px) scale(1.05);
 }
 
 .player-card {
@@ -84,14 +94,27 @@ body::before {
     padding: 8px;
     border-radius: 30px;
     background: linear-gradient(145deg,#111,#000);
-    box-shadow: 0 0 80px rgba(255,0,0,0.25),
-                0 0 120px rgba(0,0,0,0.95);
+    box-shadow: 
+        0 0 80px rgba(255,0,0,0.25),
+        0 0 120px rgba(0,0,0,0.95);
+    position: relative;
+}
+
+.player-card::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 30px;
+    background: radial-gradient(circle, rgba(255,0,0,0.25), transparent 70%);
+    z-index: 0;
 }
 
 .player-inner {
+    position: relative;
     background: rgba(15,15,15,0.95);
     border-radius: 25px;
     padding: 15px;
+    z-index: 1;
 }
 
 .player-wrapper {
@@ -103,12 +126,74 @@ body::before {
 
 .player-wrapper iframe {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: none;
 }
 
 .footer {
+    margin: 40px 0;
+    font-size: 12px;
+    opacity: 0.5;
+    letter-spacing: 1px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header-box">
+    <div class="header">🏏 ICC MEN'S T20 WORLD CUP 2026</div>
+    <div class="subtitle">Premium Live Match Experience</div>
+</div>
+
+<div class="live-badge">🔴 LIVE STREAMING</div>
+
+<a href="https://t.me/Ankmods0" target="_blank" class="telegram-btn">
+🚀 Join Telegram for Match Updates
+</a>
+
+<div class="player-card">
+    <div class="player-inner">
+        <div class="player-wrapper">
+            <iframe 
+                src="https://allrounder-king.pages.dev/channel/star-sports-2-hindi"
+                allowfullscreen
+                allow="autoplay; encrypted-media">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+Official Streaming • T20 World Cup 2026
+</div>
+
+<!-- Basic Protection Script -->
+<script>
+document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+});
+
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+};
+
+setInterval(function() {
+    if (window.outerWidth - window.innerWidth > 160 || 
+        window.outerHeight - window.innerHeight > 160) {
+        document.body.innerHTML = "<h1 style='color:red;text-align:center;margin-top:20%;'>Access Denied</h1>";
+    }
+}, 1000);
+</script>
+
+</body>
+</html>
     margin: 40px 0;
     font-size: 12px;
     opacity: 0.5;
