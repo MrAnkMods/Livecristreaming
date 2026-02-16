@@ -50,14 +50,12 @@ body::before {
     -webkit-text-fill-color: transparent;
 }
 
-/* Subtitle */
 .subtitle {
     font-size: 14px;
     opacity: 0.7;
     margin-top: 5px;
 }
 
-/* Live Badge */
 .live-badge {
     margin-top: 20px;
     padding: 8px 20px;
@@ -73,7 +71,6 @@ body::before {
     50% { transform: scale(1.1); opacity: 0.7; }
 }
 
-/* Telegram Button */
 .telegram-btn {
     margin-top: 25px;
     padding: 13px 35px;
@@ -90,7 +87,6 @@ body::before {
     transform: translateY(-4px) scale(1.05);
 }
 
-/* Player Card - Premium Dark */
 .player-card {
     width: 95%;
     max-width: 1000px;
@@ -104,7 +100,6 @@ body::before {
     position: relative;
 }
 
-/* Soft Red Ambient Ring */
 .player-card::before {
     content: "";
     position: absolute;
@@ -122,7 +117,6 @@ body::before {
     z-index: 1;
 }
 
-/* Responsive Player */
 .player-wrapper {
     position: relative;
     padding-top: 56.25%;
@@ -139,7 +133,6 @@ body::before {
     border: none;
 }
 
-/* Footer */
 .footer {
     margin: 40px 0;
     font-size: 12px;
@@ -175,8 +168,29 @@ body::before {
 </div>
 
 <div class="footer">
-Official Streaming• T20 World Cup 2026
+Official Streaming • T20 World Cup 2026
 </div>
+
+<!-- Basic Protection Script -->
+<script>
+document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+});
+
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 73) return false;
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 74) return false;
+    if (e.ctrlKey && e.keyCode == 85) return false;
+};
+
+setInterval(function() {
+    if (window.outerWidth - window.innerWidth > 160 || 
+        window.outerHeight - window.innerHeight > 160) {
+        document.body.innerHTML = "<h1 style='color:red;text-align:center;margin-top:20%;'>Access Denied</h1>";
+    }
+}, 1000);
+</script>
 
 </body>
 </html>
